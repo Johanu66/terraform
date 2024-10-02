@@ -1,19 +1,3 @@
-variable "project_id" {
-    type = string
-    default = "esirem"
-}
-
-variable "region" {
-    type = string
-    default = "europe-west9"
-}
-
-provider "google" {
-    project = var.project_id
-    credentials = "./student.json"
-    region  = var.region
-}
-
 resource "google_compute_instance" "vpc-network" {
   name         = "my-instance"
   machine_type = "n2-standard-2"
